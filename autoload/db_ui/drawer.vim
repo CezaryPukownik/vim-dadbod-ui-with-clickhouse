@@ -359,7 +359,8 @@ function! s:drawer.render(...) abort
     endif
   endif
 
-  let content = map(copy(self.content), 'repeat(" ", shiftwidth() * v:val.level).v:val.icon.(!empty(v:val.icon) ? " " : "").v:val.label')
+  let custom_indent_size = 2
+  let content = map(copy(self.content), 'repeat(" ", custom_indent_size * v:val.level).v:val.icon.(!empty(v:val.icon) ? " " : "").v:val.label')
 
   setlocal modifiable
   silent 1,$delete _
